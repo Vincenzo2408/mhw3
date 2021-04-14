@@ -1,0 +1,420 @@
+body {
+  background-color: rgb(252, 245, 235);
+  margin: 0; /*Così il sito non ha margini con gli estremi della pagina*/
+  font-style: normal;
+}
+
+/*zona intestazione*/
+
+header{
+  color: black;
+  position: relative;
+  height: 400px;
+  background-image: url(https://fastly.syfy.com/sites/syfy/files/2020/05/snowpiercer_0.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+
+header strong {
+  font-family: 'Optima', sans-serif;
+  opacity: 0.75;
+  position: absolute; /*rispetto a header che ha posizione relativa, questo ha posizione assoluta nell'header*/
+  left: 800px;
+  font-size: 4.25em; /*69px*/
+  letter-spacing: 4px;
+  padding-top: 200px;
+  color:red;
+  text-align: center; 
+  font-style: italic; /*scrittura leggermente inclinata*/
+}
+
+header nav {
+  position: absolute; /*rispetto a header che ha posizione relativa, questo ha posizione assoluta nell'header*/
+  font-size: 0.875em; /*14px*/
+  padding: 20px;
+}
+
+#collegamenti {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase; /* contenuto in maiuscolo */
+  text-align:center;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/*zona intestazione (ma può funzionare ovunque metta il tag a nell'html, infatti viene usato in Clicca qui! nella Zona Covid)*/
+
+a {
+  position: relative;
+  cursor: pointer; /*tipo di cursore a contatto con il blocco a*/
+  margin: 15px;
+  color: black;
+  font-weight: normal;
+}
+
+a.bottone {
+  padding: 10px 30px;
+  border: 2px solid white;
+  border-radius: 3px; 
+  background-color: rgba(135, 206, 250, 0.733);
+}
+
+a.bottone:hover{ /*cambio di colore quando si passa il cursore*/
+    padding: 10px 30px;
+    border: 2px solid white; 
+    border-radius: 3px; 
+    background-color:limegreen;
+}
+
+#bottone_modificato{
+  padding: 10px 30px;
+  border: 2px solid white;
+  border-bottom: px;
+  background-color: red;
+}
+
+#bottone_modificato:hover
+{
+  padding: 10px 30px;
+  border: 2px solid white;
+  border-bottom: px; 
+  background-color: rgb(190, 132, 7);
+}
+
+/*zona centrale*/
+#benvenuto{
+  height:150px;
+}
+
+#benvenuto p {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  width: 20%;
+}
+
+#benvenuto h1 {
+  margin-bottom:23px;
+  font-size: 1.75em /*28px*/;
+  font-weight: normal;
+  color:black ;
+}
+
+section {
+  height: 565px;
+  margin-top: 100px;
+  margin-bottom:20px;
+  text-align: center;
+}
+
+#descrizione {
+  display: flex;
+  justify-content: space-around; /*i flex si posizionano proporzionali nel foglio*/
+}
+
+#descrizione div {
+  width: 390px; /*Calcola lo spessore (larghezza) delle immagini    calc(50% - 20px)*/
+  font-size: 1em;
+}
+
+#descrizione img {
+  width: 90%;
+  height: 90%;
+  border: 6px solid rgba(185, 118, 30);
+  cursor:pointer;
+}
+
+#descrizione img:hover{
+  opacity: 0.8;
+}
+
+#descrizione h1 {
+  margin: 19px 0px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+#vagoni {
+  font-family: 'Arial', sans-serif ;
+  color: rgb(248, 203, 136);
+  font-weight: bold;
+  font-style: italic; 
+}
+
+#tratta {
+  font-family: 'Helvetica', sans-serif;
+  color: rgb(243, 183, 93);
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+#binari {
+  font-family: 'Arial', sans-serif ;
+  color: rgb(250, 176, 66);
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+#treni {
+  font-family: 'Helvetica', sans-serif;
+  color: rgb(252, 152, 4);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*zona finale*/
+
+footer {
+  background-color: rgba(128,128,128,.7);
+  color:white;
+  padding: 50px;
+  text-align: center;
+}
+
+footer p{
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: small;
+}
+
+/*per i mobile*/
+
+#menu {
+  display: none;
+}
+  
+#menu div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+@media (max-width: 900px) {
+    #collegamenti {
+    display: none;
+    }
+    
+    #menu
+    {
+      padding-top: 5px;
+      padding-left: 10px;
+      display: block;
+    }
+}
+
+@media (max-width: 1500px){ /*Per la scritta rossa sotto i 1500px*/
+  header strong{
+    font-size: 2.5em; /*40px*/
+    left: 74%;
+    right: 3%;
+    padding-top: 160px;
+  }
+}
+
+@media(max-width:502px)
+{
+  #benvenuto{
+    height:180px;
+  }
+
+  #benvenuto p{
+    width: 200px ;
+  }
+}
+
+@media (max-width: 900px){ /*Per la scritta rossa sotto i 900px*/
+    header strong{
+      font-size: 2.5em; /*40px*/
+      left: 4%;
+      right: 8%;
+      padding-top: 130px;
+    }
+    
+    header{
+      text-align:center;
+    }   
+}
+
+@media (max-width: 900px){
+  #descrizione{ /*metti i blocchi in colonna centrati occupando lo spazio disponibile*/
+    flex-direction:column;
+    align-items: center;
+    flex-grow: 1; 
+  }
+
+  #vagoni, #treni, #binari, #tratta{
+    font-style: normal;
+  }
+
+  #descrizione div{ /*modifica la dimensione delle immagini in colonna: 100% le immagini sono 
+  ingrandite fino al massimo di sinistra e destra, 80% genera un distanziamento dai lati*/
+  width: 80%;
+  }
+
+  #descrizione p{
+    padding-top: 1px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+
+  #descrizione h1{
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  #descrizione img{
+    width: 90%;
+    height: 100%;
+  }
+
+  section {
+    margin: 25px 0px;
+    height: calc(100%);
+  }
+
+  #benvenuto p{
+    text-align:center;
+    margin-bottom: 40px;
+  }
+}
+
+/*zona Covid*/
+
+#covid {
+  line-height: 20px;
+  font-family: 'Arial', sans-serif;
+  color: black;
+  font-weight: normal;
+  padding: 10px;
+  text-align:center; 
+  background-color: rgba(24, 207, 63, 0.3);
+  border:5px solid rgba(2, 27, 7, 0.3);
+  font-style: normal;
+  font-size: 1.05em; /*16,8 px*/
+  height: 100%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#covid img{
+  border: 4px solid red;
+  width: 10%;
+  height: 10%;
+}
+
+#covid a:hover{
+  color: blue;
+}
+
+@media (max-width: 900px) {
+  #covid img {
+  display: none;
+  }
+}
+
+#covid h3{
+  font-size: 0.9em; /*14,4px*/
+}
+
+a.riduzione{ /*riduciamo i margini del tag a implementato in "zona intestazione"*/
+  margin: 2px;
+}
+
+/*Ho usato div per tag unici all'interno della pagina, class per una serie di elementi con caratteristiche comuni*/
+
+/*Homework III*/
+
+#area_conservatorio{
+  height: 100%;
+  display: flex; 
+  flex-direction:row;
+  background-color: rgba(214, 110, 40, 0.36);
+  border: 6px solid  rgb(245, 220, 182);
+  margin: 0;
+  font-size: 0.9em;
+}
+
+#area_conservatorio div img{
+  margin-top: 5px;
+  width: 200px;
+  height: 200px;
+  border: 6px solid rgba(185, 118, 30);
+  margin-left: 10px;
+}
+
+#area_conservatorio h1{
+  margin: 19px 0px;
+  letter-spacing: 2px;
+  font-family: 'Helvetica', sans-serif;
+  color: rgb(245, 220, 182);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#sezione_musica, #sezione_libri{
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-around;
+}
+
+#sezione_libri{
+  margin-top:10px;
+}
+
+#sezione_libri div{
+  margin-top:8px;
+  border: 2px solid black;
+  background-color: rgba(128, 128, 128, 0.544);
+  margin-right:10px;
+}
+
+#sezione_libri h6{
+  margin: 3px;
+}
+
+#sezione_musica div{
+
+  width: 100px; 
+  height: 100%;
+  font-size: 1em;
+  display: flex; 
+  flex-direction: column;
+  margin-top:20px;
+}
+
+#sezione_musica h6{
+  margin-top: 3px;
+}
+
+#libri{
+  margin-top: 5px;
+}
+#sezione_musica div img{
+  width: 90%;
+  height: 100%;
+  border: 4px solid rgba(185, 118, 30);
+}
+
+@media(max-width: 1250px){
+
+#immagini{
+  display:none
+}
+}
